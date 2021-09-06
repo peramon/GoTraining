@@ -86,4 +86,12 @@ func main() {
 
 	fmt.Println("EL area del circulo con radio ", radioCirculo, "es -> ", areaCirculo)
 
+	// Datos primitivos
+	var positivoUint uint = 12;
+	var numeroComplejo complex128 = 10 + 8i
+	fmt.Println("\nDATOS PRIMITIVOS \nuint -> ", positivoUint,"\nComplejo -> ",numeroComplejo)
+
+
+
+
 }
