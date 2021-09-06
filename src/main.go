@@ -91,7 +91,26 @@ func main() {
 	var numeroComplejo complex128 = 10 + 8i
 	fmt.Println("\nDATOS PRIMITIVOS \nuint -> ", positivoUint,"\nComplejo -> ",numeroComplejo)
 
+	// FMT
+	fmt.Println("\nFMT")
+	helloMessage := "Hello"
+	worldMessage := "World"
 
+	fmt.Println(helloMessage, worldMessage)
+	fmt.Println(helloMessage, worldMessage)
 
+	name := "Paul"
+	age := 23
+
+	fmt.Printf("%s tiene la edad de %d anios\n", name, age)
+	fmt.Printf("%v tiene la edad de %v anios\n", name, age)
+
+	message := fmt.Sprintf("%s tiene la edad de %d anios", name, age)
+	fmt.Println(message)
+
+	// Tipo de datos
+	fmt.Println("\nVER EL TIPO DE DATOS")
+	fmt.Printf("helloMessage: %T\n", helloMessage)
+	fmt.Printf("age: %T\n", age)
 
 }
