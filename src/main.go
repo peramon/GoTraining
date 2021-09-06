@@ -136,7 +136,7 @@ func main() {
 	fmt.Println("\nCICLO FOR")
 	// For condicional
 	for i := 0; i < 10; i++ {
-		fmt.Println(i)
+		fmt.Printf(i, " ")
 	}
 }
 
