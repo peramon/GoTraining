@@ -132,6 +132,12 @@ func main() {
 	valorAreaCirculo := calcularAreaCirculo(4)
 	fmt.Println("El resultado de la funcion para calcular el area del circulo es -> ", valorAreaCirculo)
 
+	// Ciclo For
+	fmt.Println("\nCICLO FOR")
+	// For condicional
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
 }
 
 
