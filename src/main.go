@@ -113,4 +113,10 @@ func main() {
 	fmt.Printf("helloMessage: %T\n", helloMessage)
 	fmt.Printf("age: %T\n", age)
 
+	// Uso de funciones
+	normalFunction()
+}
+
+func normalFunction(){
+	fmt.Println("Hola mundo")
 }
