@@ -114,9 +114,30 @@ func main() {
 	fmt.Printf("age: %T\n", age)
 
 	// Uso de funciones
-	normalFunction()
+	fmt.Println("\nFUNCIONES")
+	normalFunction("Hola mundo")
+	tripleArgument(1,5,"Nuevo")
+	valor := returnValue(7)
+	fmt.Println("Retorno funcion -> ",valor)
+	valor1, valor2 := returnTwoMoreValues(3)
+	fmt.Println("Funciones con 2 retornos\nValor 1 -> ", valor1, "\nValor 2 -> ", valor2)
+	valor3, _ := returnTwoMoreValues(5)
+	fmt.Println("Funciones con 2 retornos, trayendo solo 1\nValor 3 -> ", valor3)
+
 }
 
-func normalFunction(){
-	fmt.Println("Hola mundo")
+func normalFunction(message string){
+	fmt.Println(message)
+}
+
+func tripleArgument(a,b int, c string){
+	fmt.Println("a -> ", a,"\nb -> ",b,"\nc -> ", c)
+}
+
+func returnValue(a int)  int{
+	return a * 2
+}
+
+func returnTwoMoreValues(a int)(c, d int){
+	return a*2, a*4
 }
