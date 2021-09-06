@@ -125,10 +125,17 @@ func main() {
 	fmt.Println("Funciones con 2 retornos, trayendo solo 1\nValor 3 -> ", valor3)
 
 	// Practica: Pasar el area de la fuguras calculadas a Funciones
-	calcularAreaRectanfulo(12,10)
-	fmt.Println("El resultado de la funcion para calcular el area del rectangulo es -> ", baseRectangulo*alturaRectangulo)
+	valorAreaRectangulo := calcularAreaRectanfulo(12,10)
+	fmt.Println("El resultado de la funcion para calcular el area del rectangulo es -> ", valorAreaRectangulo)
+	valorAreaTrapecio := calcularAreaTrapecio(3.5, 9.5, 4)
+	fmt.Println("El resultado de la funcion para calcular el area del trapecio es -> ", valorAreaTrapecio)
+	valorAreaCirculo := calcularAreaCirculo(4)
+	fmt.Println("El resultado de la funcion para calcular el area del circulo es -> ", valorAreaCirculo)
 
 }
+
+
+// FUNCIONES 
 
 func normalFunction(message string){
 	fmt.Println(message)
@@ -152,16 +159,13 @@ func calcularAreaRectanfulo(base, altura int) int  {
 	return base * altura
 }
 
+// Area del Trapecio
+func calcularAreaTrapecio(baseMayor, baseMenor, altura float64) float64  {
+	return ((baseMayor + baseMenor) / 2) * float64(altura)
+}
 
-	// Area del trapecio
-	/*var baseMenorTrapecio float64 = 3.5
-	var baseMayorTrapecio float64 = 9.5
-	var alturaTRapecio int = 4
-	var areaTrapecio float64 = ((baseMayorTrapecio + baseMenorTrapecio) / 2) * float64(alturaTRapecio)
-	fmt.Println("Base de un trapecio", " con base menor ", baseMenorTrapecio, ", base mayor", baseMayorTrapecio, "y altura", alturaTRapecio, "-> ", areaTrapecio)
+// Area del circulo
+func calcularAreaCirculo(radioCirculo int) float64  {
+	return 3.14 * float64(radioCirculo)
+}	
 
-	// Area de un circulo
-	var radioCirculo int = 12
-	areaCirculo := pi * float64(radioCirculo)
-
-	fmt.Println("EL area del circulo con radio ", radioCirculo, "es -> ", areaCirculo)*/
