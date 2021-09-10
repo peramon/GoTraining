@@ -213,6 +213,25 @@ func main() {
 	default:
 		fmt.Println("No hay condicion")
 	}
+
+	// DEFER - CONTINUE - BREAK
+	fmt.Println("\nDEFER - CONTINUE - BREAK")
+	defer fmt.Println("Hola")
+	fmt.Println("Mundo")
+
+	for index := 0; index < 10; index++ {
+		if index == 2 {
+			fmt.Println("Es 2")
+			continue
+		}
+
+		if index == 8 {
+			fmt.Println("Es el 8")
+			break
+		}
+		fmt.Println(index)
+	}
+
 }
 
 // FUNCIONES
