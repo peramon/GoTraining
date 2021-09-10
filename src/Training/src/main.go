@@ -194,6 +194,25 @@ func main() {
 
 	fmt.Println("Intento 1 -> ", revisarOne, "\nIntento 2 -> ", revisarTwo)
 
+	// SWITCH
+	fmt.Println("\nSWITCH")
+	switch moduloPar := 5 % 2; moduloPar {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
+	}
+
+	// Sin condicion
+	valueSwitch := 200
+	switch {
+	case valueSwitch > 100:
+		fmt.Println("Mayor a 100")
+	case valueSwitch < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No hay condicion")
+	}
 }
 
 // FUNCIONES
