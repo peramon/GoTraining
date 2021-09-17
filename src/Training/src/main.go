@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -216,7 +217,7 @@ func main() {
 
 	// DEFER - CONTINUE - BREAK
 	fmt.Println("\nDEFER - CONTINUE - BREAK")
-	defer fmt.Println("Hola")
+	defer fmt.Println("\nHola usando defer")
 	fmt.Println("Mundo")
 
 	for index := 0; index < 10; index++ {
@@ -232,9 +233,49 @@ func main() {
 		fmt.Println(index)
 	}
 
+	// ARRAYS Y SLICES
+	// Arrayv - Inmutables
+	fmt.Println("\nARRAYS Y SLICES")
+	var array [4]int
+	array[0] = 1
+	array[1] = 2
+	fmt.Println("Array -> ", array, "\nElementos en un array -> ", len(array), "\nCapacidad maxima -> ", cap(array))
+
+	// Slice - Mutables
+	slice := []int{0, 1, 2, 3, 4, 5, 6}
+	fmt.Println("Slice ->", slice, "| len -> ", len(slice), "| cap -> ", cap(slice))
+
+	// Metodos en el slice
+	fmt.Println("El primer elemento -> ", slice[0])
+	fmt.Println("Del primer elemento(inclusivo) hasta el tercero(exclusivo) -> ", slice[:3])
+	fmt.Println("Del segundo elemento(inclusivo) hasta el cuarto(exclusivo) -> ", slice[2:4])
+	fmt.Println("Del cuarto elemento en adelante -> ", slice[4:])
+
+	// Append
+	slice = append(slice, 7)
+	fmt.Println("Slice ->", slice, "| len -> ", len(slice), "| cap -> ", cap(slice))
+
+	// Append nueva lista
+	newSlice := []int{8, 9, 10}
+	slice = append(slice, newSlice...)
+	fmt.Println("Slice ->", slice, "| len -> ", len(slice), "| cap -> ", cap(slice))
+
+	sliceStr := []string{"hola", "como", "estas"}
+	for i, valor := range sliceStr {
+		fmt.Println(i, valor)
+	}
+
+	// func Palindromo
+	fmt.Print("\n")
+	checkPalindromo("Ala")
+	checkPalindromo("pesa")
+	checkPalindromo("ALa")
+
 }
 
-// FUNCIONES
+//
+////
+////// FUNCIONES
 
 func normalFunction(message string) {
 	fmt.Println(message)
@@ -283,5 +324,20 @@ func checkUserPass(user, pass string) bool {
 		return true
 	} else {
 		return false
+	}
+}
+
+// Palindromo
+func checkPalindromo(word string) {
+	text := strings.ToLower(word)
+	var textReverse string
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es palindromo")
 	}
 }
