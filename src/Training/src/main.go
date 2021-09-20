@@ -271,6 +271,24 @@ func main() {
 	checkPalindromo("pesa")
 	checkPalindromo("ALa")
 
+	// MAPS
+	fmt.Println("\nMAPS")
+	mapita := make(map[string]int)
+
+	mapita["Jose"] = 14
+	mapita["Pepe"] = 20
+
+	fmt.Println(mapita)
+
+	// Recorrer mapa
+	for i, v := range mapita { // No va en el mismo orden
+		fmt.Println(i, v)
+	}
+
+	// Encontrar un valor
+	valorMapita, okey := mapita["Jose"]
+	fmt.Println(valorMapita, okey)
+
 }
 
 //
