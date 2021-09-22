@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	pk "./mypackage"
 )
 
 func main() {
@@ -289,6 +291,21 @@ func main() {
 	valorMapita, okey := mapita["Jose"]
 	fmt.Println(valorMapita, okey)
 
+	// STRUCTS
+	fmt.Println("\nSTRUCTS")
+	myCar := car{brand: "Chevrolet", year: 2020}
+	fmt.Println(myCar)
+
+	// Other method
+	var otherCar car
+	otherCar.brand = "Ferrari"
+	otherCar.year = 2015
+	fmt.Println(otherCar)
+
+	// Clase publica
+	var myCarTwo pk.CarPublic
+	myCarTwo.Brand = "Mazda"
+	fmt.Println(myCarTwo)
 }
 
 //
@@ -358,4 +375,12 @@ func checkPalindromo(word string) {
 	} else {
 		fmt.Println("No es palindromo")
 	}
+}
+
+//
+////
+////// STRUCTS
+type car struct {
+	brand string
+	year  int
 }
