@@ -327,6 +327,9 @@ func main() {
 	myPc.DuplicateRam()
 	fmt.Println(myPc)
 
+	// STRINGERS
+	fmt.Println("\nSTRINGERS")
+	fmt.Println(myPc)
 }
 
 //
