@@ -302,9 +302,31 @@ func main() {
 	fmt.Println(otherCar)
 
 	// Clase publica
+	fmt.Println("\nSTRUCTS - PACKAGES")
 	var myCarTwo mypackage.CarPublic
 	myCarTwo.Brand = "Mazda"
 	fmt.Println(myCarTwo)
+
+	// Punteros
+	fmt.Println("\nPUNTEROS Y STRUCTS")
+	pointer_a := 50
+	pointer_b := &pointer_a // con & accedemos a la direccion de memoria
+
+	fmt.Println(pointer_b)
+	fmt.Println(*pointer_b) // con * accedemos al valor de la memoria
+
+	*pointer_b = 150
+	fmt.Println(pointer_a)
+
+	var myPc mypackage.Pc
+	myPc.Ram = 16
+	myPc.Disk = 512
+	myPc.Brand = "DELL"
+	fmt.Println(myPc)
+	myPc.Ping()
+	myPc.DuplicateRam()
+	fmt.Println(myPc)
+
 }
 
 //
