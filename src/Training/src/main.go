@@ -330,6 +330,18 @@ func main() {
 	// STRINGERS
 	fmt.Println("\nSTRINGERS")
 	fmt.Println(myPc)
+
+	// INTERFACES
+	fmt.Println("\nINTERFACES")
+	myCuadrado := otherCuadrado{base: 4}
+	myRecatangulo := otherRectangulo{base: 3, altura: 7}
+	calcular(myCuadrado)
+	calcular(myRecatangulo)
+
+	// Lista interfaces
+	myIntereface := []interface{}{"Hola", 12, 4.5}
+	fmt.Println(myIntereface...)
+
 }
 
 //
@@ -407,4 +419,30 @@ func checkPalindromo(word string) {
 type car struct {
 	brand string
 	year  int
+}
+
+// Interfaces
+type otherCuadrado struct {
+	base float64
+}
+
+type otherRectangulo struct {
+	base   float64
+	altura float64
+}
+
+type figure2D interface {
+	area() float64
+}
+
+func (c otherCuadrado) area() float64 {
+	return c.base * c.base
+}
+
+func (r otherRectangulo) area() float64 {
+	return r.base * r.altura
+}
+
+func calcular(f figure2D) {
+	fmt.Println("Area: ", f.area())
 }
