@@ -1,10 +1,9 @@
 package main
 
 import (
+	"Training/src/mypackage"
 	"fmt"
 	"strings"
-
-	pk "./mypackage"
 )
 
 func main() {
@@ -303,7 +302,7 @@ func main() {
 	fmt.Println(otherCar)
 
 	// Clase publica
-	var myCarTwo pk.CarPublic
+	var myCarTwo mypackage.CarPublic
 	myCarTwo.Brand = "Mazda"
 	fmt.Println(myCarTwo)
 }
