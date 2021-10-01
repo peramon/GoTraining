@@ -4,6 +4,8 @@ import (
 	"Training/src/mypackage"
 	"fmt"
 	"strings"
+	"sync"
+	"time"
 )
 
 func main() {
@@ -342,6 +344,22 @@ func main() {
 	myIntereface := []interface{}{"Hola", 12, 4.5}
 	fmt.Println(myIntereface...)
 
+	// CONCURRENCIA
+	fmt.Println("\nCONCURRENCIA - gorutines")
+	var wg sync.WaitGroup
+
+	fmt.Println("Hola ")
+	wg.Add(1)
+	go say("Baby", &wg)
+	wg.Wait()
+
+	go func(text string) {
+		fmt.Println(text)
+	}("Adios")
+
+	time.Sleep(time.Second * 1) // Usamos esto para imprimir pero no es recomendable - ineficiente
+
+	// Channels
 }
 
 //
@@ -411,6 +429,11 @@ func checkPalindromo(word string) {
 	} else {
 		fmt.Println("No es palindromo")
 	}
+}
+
+func say(text string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println(text)
 }
 
 //
