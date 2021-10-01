@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strings"
 	"sync"
-	"time"
 )
 
 func main() {
@@ -357,9 +356,15 @@ func main() {
 		fmt.Println(text)
 	}("Adios")
 
-	time.Sleep(time.Second * 1) // Usamos esto para imprimir pero no es recomendable - ineficiente
+	// time.Sleep(time.Second * 1) // Usamos esto para imprimir pero no es recomendable - ineficiente
 
 	// Channels
+	fmt.Println("\nChanels")
+	canal := make(chan string, 1)
+
+	fmt.Println("Hello Channel")
+	go sayTwo("Bye  channel", canal)
+	fmt.Println(<-canal)
 }
 
 //
@@ -434,6 +439,10 @@ func checkPalindromo(word string) {
 func say(text string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	fmt.Println(text)
+}
+
+func sayTwo(text string, c chan<- string) {
+	c <- text
 }
 
 //
